@@ -23,10 +23,31 @@
   <body>
 	<!-- copy these lines to your document: -->
 
-	<div id="index_hype_container" class="HYPE_document" style="margin:auto;position:relative;width:415px;height:329px;overflow:hidden;">
+	<div id="index_hype_container" class="HYPE_document" style="margin:auto;position:relative;width:100%;height:329px;overflow:hidden;">
 		<script type="text/javascript" charset="utf-8" src="index.hyperesources/index_hype_generated_script.js?89451"></script>
 	</div>
 
 	<!-- end copy -->
+	
+	<script type="text/javascript">
+ 
+window.onresize = function(event) {
+ 
+	// Input the Width and the Height of your original document. Just Numbers!
+	var ratioScale = 415 / 329;
+	 
+	// get the width of the enclosing Div for the Hype element
+	var currentWidth = document.getElementById('index_hype_container').offsetWidth;
+	 
+	// Use the width of the Div, and divide it by the Ratio of the W/H of the document
+	// and set this as the variable for the height of the Iframe.
+	var iFrameNewHeight = currentWidth / ratioScale;
+	 
+	// set the iframe to have the correct height.
+	document.getElementById('hypeFrame').style.height = iFrameNewHeight + "px";
+    
+};</script>
+	
+	
   </body>
 </html>
